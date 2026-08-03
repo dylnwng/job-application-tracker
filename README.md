@@ -2,6 +2,10 @@
 
 This workspace contains a lightweight Chrome extension and local dashboard for tracking job applications.
 
+![Dashboard preview](assets/dashboard-preview.svg)
+
+*Mockup with placeholder companies/data — not a screenshot of real application history.*
+
 ## Why I built this
 
 Most job tracking tools I looked at gate the useful features behind a paywall, and even the free ones still leave you copy-pasting company, title, and link into a spreadsheet by hand for every single application — friction that adds up fast during an active job search. I wanted two things instead: the tracker to live inside the browser tab I'm already on, and the data entry to be automatic rather than something I do myself after the fact.
