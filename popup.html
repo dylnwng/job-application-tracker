@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Capture Job</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="popup-body">
+    <div class="popup-shell">
+      <div class="popup-header">
+        <div>
+          <p class="eyebrow">Quick capture</p>
+          <h1>Save a new application</h1>
+        </div>
+        <button id="open-dashboard" class="ghost-button" type="button">Open dashboard</button>
+      </div>
+
+      <div id="status-message" class="status-message"></div>
+
+      <div id="confirm-modal" class="modal visible">
+        <div class="modal-card">
+          <div class="modal-card-header">
+            <div>
+              <p class="eyebrow">Review</p>
+              <h2>Captured details</h2>
+            </div>
+            <div id="capture-badge" class="capture-badge">Scanning page</div>
+          </div>
+          <form id="capture-form" class="detail-form">
+            <label>
+              Company
+              <input name="company_name" required />
+            </label>
+            <label>
+              Job title
+              <input name="job_title" required />
+            </label>
+            <label>
+              Location
+              <input name="location" />
+            </label>
+            <label>
+              URL
+              <input name="post_url" />
+            </label>
+            <label>
+              Status
+              <select name="status">
+                <option>Applied</option>
+                <option>Online Assessment</option>
+                <option>First Round</option>
+                <option>Behavioral</option>
+                <option>Technical</option>
+                <option>Final Round</option>
+                <option>Offer</option>
+                <option>Rejected</option>
+                <option>Ghosted</option>
+              </select>
+            </label>
+            <label>
+              Salary range
+              <input name="salary_range" />
+            </label>
+            <label>
+              Description
+              <textarea name="job_desc" rows="5"></textarea>
+            </label>
+            <label>
+              Notes
+              <textarea name="notes" rows="3"></textarea>
+            </label>
+          </form>
+          <div class="actions">
+            <button id="save-btn" class="primary-button" type="button">Save application</button>
+            <button id="cancel-btn" class="ghost-button" type="button">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
