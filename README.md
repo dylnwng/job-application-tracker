@@ -23,6 +23,8 @@ That shaped the core decisions:
 - db.js: IndexedDB storage layer for local persistence
 - dashboard.html and dashboard.js: Kanban-style dashboard for editing and reviewing applications
 - styles.css: Shared styling for the popup and dashboard
+- icons/: Extension icons (toolbar, extensions page, Web Store)
+- package.sh: Builds a Web Store-ready zip into dist/
 
 ## How to use it
 1. Open Chrome and go to chrome://extensions.
@@ -30,6 +32,17 @@ That shaped the core decisions:
 3. Click Load unpacked and select this workspace folder.
 4. Open the extension popup from the toolbar and capture a job page.
 5. Review the saved information, then open the dashboard to edit statuses, notes, and salary details.
+
+## Keeping it installed across restarts
+Chrome keeps an unpacked extension installed as long as the folder you loaded still exists at the same path, so:
+- Clone/unzip the project to a permanent location (e.g. `~/Documents/job-application-tracker`), not `Downloads`, and load it from there.
+- On startup Chrome may show a "Disable developer mode extensions" prompt. Click **Cancel** — choosing **Disable** turns the extension off.
+- Make sure you are using the same Chrome profile you loaded it into.
+
+To remove the developer-mode prompt entirely, publish it as an **unlisted** Chrome Web Store item (one-time $5 developer registration):
+1. Run `./package.sh` to produce `dist/job-application-tracker.zip`.
+2. Go to https://chrome.google.com/webstore/devconsole, create a new item, upload the zip, and set visibility to **Unlisted**.
+3. Once approved, install it from the item's link like any other extension. Bump `version` in `manifest.json` and re-upload to ship updates.
 
 ## Notes
 - Data is stored locally in IndexedDB in the browser.
